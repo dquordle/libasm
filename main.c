@@ -29,8 +29,8 @@ int main()
 	dst[1] = 'a';
 	printf("my ft_strcmp : %d\n", ft_strcmp(str, dst));
 	printf("\n%zd\n", ft_write(1, "Keksik is the best", 17));
-	printf("\n%zd\n", ft_read(0, dst, 20));
-	printf("%s\n", dst);
+	printf("%zd\n", ft_read(4, dst, 20));
+//	printf("%s\n", dst);
 	char *mal = "Allocated";
 	char *all;
 	all = ft_strdup(mal);
