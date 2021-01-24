@@ -5,7 +5,7 @@ SRCS	= ft_strlen.s\
 		  ft_read.s\
 		  ft_strdup.s
 
-OBJS	= $(SRCS:.c=.o)
+OBJS	= $(SRCS:.s=.o)
 
 NAME	= libasm.a
 
@@ -13,12 +13,11 @@ NASM	= nasm -fmacho64
 
 RM		= rm -f
 
-$(NAME):
-		$(NASM) $(SRCS)
+$(NAME):	$(OBJS)
 		ar rc $(NAME) $(OBJS)
 
-.c.o:
-		$(NASM) $< -o $(<:.c=.o)
+.s.o:
+		$(NASM) $< -o $(<:.s=.o)
 
 all:		$(NAME)
 
